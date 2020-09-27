@@ -4,7 +4,7 @@ package ru.job4j.array;
         public static boolean monoHorizontal(char[][] board, int row) {
             boolean result = true;
             for (int i = 0; i < board.length; i++) {
-                if (board[row][i] != board[row][0]) {
+                if (board[row][i] != 'X') {
                     result = false;
                     break;
                 }
@@ -15,7 +15,7 @@ package ru.job4j.array;
         public static boolean monoVertical(char[][] board, int column) {
             boolean result = true;
             for (int j = 0; j < board.length; j++) {
-                if (board[j][column] != board[0][column]) {
+                if (board[j][column] != 'X') {
                     result = false;
                     break;
                 }
@@ -29,7 +29,20 @@ package ru.job4j.array;
                 result[k] = board[k][k];
             }
             return result;
+        }
+
+        public static boolean isWin(char[][] board) {
+            boolean result = false;
+            for (int l = 0; l < board.length; l++) {
+                if ((monoHorizontal(board, l)) || monoVertical(board, l)) {
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        }
     }
-}
+
+
 
 
