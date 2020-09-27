@@ -10,7 +10,7 @@ package ru.job4j.array;
                 }
             }
             return result;
-    }
+        }
 
         public static boolean monoVertical(char[][] board, int column) {
             boolean result = true;
@@ -22,5 +22,14 @@ package ru.job4j.array;
             }
             return result;
         }
+
+        public static char[] extractDiagonal(char[][] board) {
+            char[] result = new char[board.length];
+            for (int k = 0; k < board.length; k++) {
+                result[k] = board[k][k];
+            }
+            return result;
+    }
 }
+
 
