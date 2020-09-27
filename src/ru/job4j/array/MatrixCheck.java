@@ -11,5 +11,16 @@ package ru.job4j.array;
             }
             return result;
     }
+
+        public static boolean monoVertical(char[][] board, int column) {
+            boolean result = true;
+            for (int j = 0; j < board.length; j++) {
+                if (board[j][column] != board[0][column]) {
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
 }
 
