@@ -34,9 +34,11 @@ package ru.job4j.array;
         public static boolean isWin(char[][] board) {
             boolean result = false;
             for (int l = 0; l < board.length; l++) {
-                if ((monoHorizontal(board, l)) || monoVertical(board, l)) {
-                    result = true;
-                    break;
+                if (board[l][l] == 'X') {
+                    if ((monoHorizontal(board, l)) || monoVertical(board, l)) {
+                        result = true;
+                        break;
+                    }
                 }
             }
             return result;
