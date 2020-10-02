@@ -16,7 +16,11 @@ public class Machine {
                 rest = temp;
                 rsl[size++] = coins[count];
             }
-            count++;
+            if (((rest % coins[count] != 0) && (rest >= coins[count])) || (rest == coins[count])) {
+                count = count;
+            } else {
+                count++;
+            }
         }
         return Arrays.copyOf(rsl, size);
     }
