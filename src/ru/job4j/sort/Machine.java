@@ -15,9 +15,6 @@ public class Machine {
             if (temp >= 0) {
                 rest = temp;
                 rsl[size++] = coins[count];
-            }
-            if (((rest % coins[count] != 0) && (rest >= coins[count])) || (rest == coins[count])) {
-                count = count;
             } else {
                 count++;
             }
